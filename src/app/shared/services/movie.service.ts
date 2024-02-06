@@ -26,4 +26,40 @@ export class MovieService {
     getMovies(): Observable<any> {
         return this.http.get<any>('https://api.themoviedb.org/3/discover/movie', options);
     }
+
+    getTvShows(): Observable<any> {
+        return this.http.get<any>('https://api.themoviedb.org/3/discover/tv', options);
+    }
+    
+    getRatedMovies(): Observable<any> {
+        return this.http.get<any>('https://api.themoviedb.org/3/guest_session/guest_session_id/rated/movies', options);
+    }
+    
+    getBannerImage(id: number): Observable<any> {
+        return this.http.get<any>(`https://api.themoviedb.org/3/movie/${id}/images`, options);
+    }
+    
+    getBannerVideo(id: number): Observable<any> {
+        return this.http.get<any>(`https://api.themoviedb.org/3/movie/${id}/videos`, options);
+    }
+    
+    getBannerDetail(id: number): Observable<any> {
+        return this.http.get<any>(`https://api.themoviedb.org/3/movie/${id}`, options);
+    }
+    
+    getNowPlayingMovies(): Observable<any> {
+        return this.http.get<any>('https://api.themoviedb.org/3/movie/now_playing', options);
+    }
+    
+    getPopularMovies(): Observable<any> {
+        return this.http.get<any>('https://api.themoviedb.org/3/movie/popular', options);
+    }
+    
+    getTopRated(): Observable<any> {
+        return this.http.get<any>('https://api.themoviedb.org/3/movie/top_rated', options);
+    }
+    
+    getUpcomingMovies(): Observable<any> {
+        return this.http.get<any>('https://api.themoviedb.org/3/movie/upcoming', options);
+    }
 }
